@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -ex
+set -ex
 
 sudo curl -sSL "https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc" | sudo -E apt-key add -
 echo "deb https://packages.erlang-solutions.com/ubuntu trusty contrib" | sudo tee -a /etc/apt/sources.list > /dev/null
@@ -9,7 +9,6 @@ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes in
 
 sudo apt-get install -y init-system-helpers socat adduser logrotate
 
-echo '[{rabbit, [{vm_memory_high_watermark, 0.7}]}].' | sudo tee --append /etc/rabbitmq/rabbitmq.config
 wget https://dl.bintray.com/rabbitmq/rabbitmq-server-deb/rabbitmq-server_3.6.12-1_all.deb
 sudo dpkg --install rabbitmq-server_3.6.12-1_all.deb
 sudo rm rabbitmq-server_3.6.12-1_all.deb
@@ -20,7 +19,10 @@ sudo rabbitmqctl add_user admin admin
 sudo rabbitmqctl set_permissions admin ".*" ".*" ".*"
 sudo rabbitmqctl set_user_tags admin administrator
 
-rm rabbitmqadmin
+echo '[{rabbit, [{vm_memory_high_watermark, 0.7}]}].' | sudo tee --append /etc/rabbitmq/rabbitmq.config
+sudo service rabbitmq-server restart
+
+#rm rabbitmqadmin
 wget http://localhost:15672/cli/rabbitmqadmin
 chmod u+x rabbitmqadmin
 
