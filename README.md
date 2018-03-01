@@ -22,7 +22,7 @@ $ vagrant ssh node2
 node2 $ /vagrant/install.sh
 ```
 
-Management plugin is available on http://192.168.33.11:15672 and http://192.168.33.12:15672 (user / password id admin / admin).
+Management plugin is available on http://192.168.33.11:15672 and http://192.168.33.12:15672 (user / password is admin / admin).
 
 ## Sending messages
 
