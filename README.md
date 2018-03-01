@@ -11,9 +11,9 @@ VirtualBox and Vagrant (2.x+).
 ## Setup
 
 ```
-$ git clone https://github.com/rabbitmq/shovel-large-messages.git
+$ git clone git@github.com:rabbitmq/shovel-large-messages.git
 $ cd shovel-large-messages
-$ Vagrant up
+$ vagrant up
 $ vagrant ssh node1
 node1 $ /vagrant/install.sh
 node1 $ /declare-shovel.sh
