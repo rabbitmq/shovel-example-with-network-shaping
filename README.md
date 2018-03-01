@@ -16,7 +16,7 @@ $ cd shovel-large-messages
 $ vagrant up
 $ vagrant ssh node1
 node1 $ /vagrant/install.sh
-node1 $ /declare-shovel.sh
+node1 $ /vagrant/declare-shovel.sh
 node1 $ exit
 $ vagrant ssh node2
 node2 $ /vagrant/install.sh
