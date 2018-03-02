@@ -43,6 +43,9 @@ sudo tc qdisc add dev eth1 root tbf rate 750Kbit burst 32kbit latency 200ms peak
 sudo tc qdisc show
 # delete limiting disciplines
 sudo tc qdisc del dev eth1 root
+# combine network latency, reordering, and loss with throughput limit
+sudo tc qdisc add dev eth1 root handle 1: netem delay 10ms reorder 25% 50% loss 0.2%
+sudo tc qdisc add dev eth1 parent 1: handle 2: tbf rate 750Kbit burst 32kbit latency 200ms peakrate 1mbit minburst 1520
 
 groovy /vagrant/send-messages.groovy
 tail -n 50 -f /var/log/rabbitmq/rabbit@vm-node1.log
