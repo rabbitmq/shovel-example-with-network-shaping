@@ -9,9 +9,9 @@ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes in
 
 sudo apt-get install -y init-system-helpers socat adduser logrotate
 
-wget https://dl.bintray.com/rabbitmq/rabbitmq-server-deb/rabbitmq-server_3.6.12-1_all.deb
-sudo dpkg --install rabbitmq-server_3.6.12-1_all.deb
-sudo rm rabbitmq-server_3.6.12-1_all.deb
+wget https://dl.bintray.com/rabbitmq/rabbitmq-server-deb/rabbitmq-server_3.6.15-1_all.deb
+sudo dpkg --install rabbitmq-server_3.6.15-1_all.deb
+sudo rm rabbitmq-server_3.6.15-1_all.deb
 
 sudo rabbitmq-plugins enable rabbitmq_shovel_management
 
