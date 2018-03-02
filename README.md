@@ -16,10 +16,12 @@ $ cd shovel-large-messages
 $ vagrant up
 $ vagrant ssh node1
 node1 $ /vagrant/install.sh
-node1 $ /vagrant/declare-shovel.sh
 node1 $ exit
 $ vagrant ssh node2
 node2 $ /vagrant/install.sh
+node2 $ exit
+$ vagrant ssh node1
+node1 $ /vagrant/declare-shovel.sh
 ```
 
 Management plugin is available on http://192.168.33.11:15672 and http://192.168.33.12:15672 (user / password is admin / admin).
