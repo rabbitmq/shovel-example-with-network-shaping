@@ -37,8 +37,6 @@ The default configured shovel is on `node1` and shovels from `node1#shovel-sourc
 ## Useful commands
 
 ```
-# limit output rate to 750Kbits
-sudo tc qdisc add dev eth1 root tbf rate 750Kbit burst 32kbit latency 400ms
 # same as above but with hard throughput limit
 sudo tc qdisc add dev eth1 root tbf rate 750Kbit burst 32kbit latency 200ms peakrate 1mbit minburst 1520
 # list default queuing disciplines
